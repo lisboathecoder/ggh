@@ -16,7 +16,7 @@ This web app leverages the power of Gemini AI to answer your questions, provide 
 ## 💡 How to Use
 
 1. Open the app in your browser.
-   - You can access it at [Goat'S Game Helper](https://goats-game-helper.vercel.app/).
+   - You can access it at [Goat'S Game Helper](https://ggh-lisboas-projects-62e0e5e4.vercel.app/).
 2. Select and enter your Gemini API key to enable AI-powered responses.
 3. Select your game.
 4. Type your question (e.g., "Best agent for Bind in Valorant?" or "How to eco round in CS2?").
