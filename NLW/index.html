@@ -12,6 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Goats</title>
   <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
 </head>
 
@@ -26,7 +27,6 @@
         <p>Ask about strategies, builds, and tips for your games!</p>
 
         <form id="form">
-          <input id="apiKey" type="password" placeholder="Input your API KEY of Gemini" required>
           <select id="gameSelect">
             <option value=" ">Select a Game</option>
             <option value="valorant">Valorant</option>
@@ -35,33 +35,31 @@
           </select>
 
           <input id="questionInput" type="text" placeholder="E.g.: Best strategy for attacking in Valorant..." required>
-          <button id="askButton">Ask me</button>
+          <button id="askButton" type="submit">ASK</button>
         </form>
 
-        <div id="aiResponse" class="hidden">
-          <div class="response-content">
-
-          </div>
+        <div id="aiResponse" style="display:none;">
+          <div class="response-content"></div>
         </div>
+
       </div>
     </section>
   </main>
-  <!-- Gemini API Key Tutorial Modal -->
-  <div id="apiKeyModal" class="modal hidden">
+  <button id="promoBtn" class="help-btn" title="See my profiles!">💡</button>
+  <div id="promoModal" class="modal hidden">
     <div class="modal-content">
-      <h3>How to get your Gemini API Key</h3>
-      <ol>
-        <li>Go to <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener">Google AI Studio</a>.
-        </li>
-        <li>Sign in with your Google account.</li>
-        <li>Click on <b>Get API Key</b> and copy the key provided.</li>
-        <li>Paste your API key in the field above.</li>
-      </ol>
-      <button id="closeApiKeyModal">Close</button>
+      <h3>My social networks!</h3>
+      <div class="social-icons">
+        <a href="https://github.com/lisboathecoder" target="_blank" rel="noopener" title="GitHub">
+          <i class="devicon-github-original colored"></i>
+        </a>
+        <a href="https://linkedin.com/in/glisboa" target="_blank" rel="noopener" title="LinkedIn">
+          <i class="devicon-linkedin-plain colored"></i>
+        </a>
+      </div>
+      <button id="closePromoModal">Close</button>
     </div>
   </div>
-  <!-- Floating help button -->
-  <button id="helpApiKeyBtn" class="help-btn" title="How to get your Gemini API Key?">?</button>
   <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
   <script src="./script.js"></script>
 </body>
