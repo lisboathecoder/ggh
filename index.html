@@ -11,15 +11,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Goats</title>
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="NLW/style.css" />
   <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
 </head>
 
 <body>
   <header>
-    <img src="./assets/logo.png" alt="Logo eSports NLW" />
+    <img src="NLW/assets/logo.png" alt="Logo eSports NLW" />
   </header>
+
+  <!-- Botão de histórico no topo direito -->
+  <button class="history-btn" id="openHistoryBtn" title="Show history" aria-label="Show history">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#232136" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>
+  </button>
+
+  <!-- Painel de histórico lateral, fora do main -->
+  <div class="history-modal hidden" id="historyModal">
+    <div class="history-panel">
+      <button class="history-close" id="closeHistoryBtn" title="Close history" aria-label="Close history">&times;</button>
+      <h3>History</h3>
+      <div class="history-list" id="historyList">
+        <!-- Itens do histórico serão inseridos aqui via JS -->
+      </div>
+    </div>
+  </div>
+
   <main>
     <section>
       <div>
@@ -45,23 +62,16 @@
       </div>
     </section>
   </main>
-  <button id="promoBtn" class="help-btn" title="See my profiles!">💡</button>
-  <div id="promoModal" class="modal hidden">
-    <div class="modal-content">
-      <h3>My social networks!</h3>
-      <div class="social-icons">
-        <a href="https://github.com/lisboathecoder" target="_blank" rel="noopener" title="GitHub">
-          <i class="devicon-github-original colored"></i>
-        </a>
-        <a href="https://linkedin.com/in/glisboa" target="_blank" rel="noopener" title="LinkedIn">
-          <i class="devicon-linkedin-plain colored"></i>
-        </a>
-      </div>
-      <button id="closePromoModal">Close</button>
-    </div>
+  <div class="social-btns-wrapper">
+    <a href="https://github.com/lisboathecoder" class="social-btn" id="githubBtn" title="GitHub" target="_blank" rel="noopener">
+      <i class="devicon-github-original colored"></i>
+    </a>
+    <a href="https://linkedin.com/in/glisboa" class="social-btn social-btn-linkedin" id="linkedinBtn" title="LinkedIn" target="_blank" rel="noopener">
+      <i class="devicon-linkedin-plain colored"></i>
+    </a>
   </div>
   <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
-  <script src="./script.js"></script>
+  <script src="NLW/script.js"></script>
 </body>
 
 </html>

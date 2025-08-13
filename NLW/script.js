@@ -1,3 +1,80 @@
+// --- HISTÓRICO ---
+const openHistoryBtn = document.getElementById('openHistoryBtn');
+const historyModal = document.getElementById('historyModal');
+const historyList = document.getElementById('historyList');
+
+function getHistory() {
+  return JSON.parse(localStorage.getItem('ggh_history') || '[]');
+}
+function saveHistory(arr) {
+  localStorage.setItem('ggh_history', JSON.stringify(arr));
+}
+function addToHistory(game, question) {
+  const now = new Date();
+  const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  const entry = { time, game, question };
+  const arr = getHistory();
+  arr.unshift(entry); // mais recente primeiro
+  saveHistory(arr);
+}
+function renderHistory() {
+  const arr = getHistory();
+  historyList.innerHTML = arr.length === 0 ? '<div style="color:#aaa;text-align:center;padding:1.5rem 0;">No questions yet.</div>' :
+    arr.map((item, idx) => `
+      <div class="history-item" data-idx="${idx}">
+        <div class="history-meta">${item.time} | <span style="font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.8;">${item.game}</span></div>
+        <div class="history-question">${item.question}</div>
+      </div>
+    `).join('');
+}
+
+
+
+const closeHistoryBtn = document.getElementById('closeHistoryBtn');
+
+openHistoryBtn.addEventListener('click', () => {
+  renderHistory();
+  historyModal.classList.remove('hidden');
+  setTimeout(() => historyModal.classList.add('show'), 10);
+});
+
+function closeHistoryPanel() {
+  historyModal.classList.remove('show');
+  setTimeout(() => historyModal.classList.add('hidden'), 370);
+}
+
+closeHistoryBtn.addEventListener('click', closeHistoryPanel);
+
+// Fecha ao clicar fora do painel (mas não dentro dele)
+historyModal.addEventListener('click', (e) => {
+  if (e.target === historyModal) closeHistoryPanel();
+});
+
+// Repetir pergunta ao clicar
+historyList.addEventListener('click', async (e) => {
+  const item = e.target.closest('.history-item');
+  if (!item) return;
+  const idx = +item.dataset.idx;
+  const arr = getHistory();
+  const { game, question } = arr[idx];
+  // Reenvia a pergunta, mas não salva no histórico de novo
+  askButton.disabled = true;
+  askButton.textContent = 'Asking...';
+  askButton.classList.add('loading');
+  try {
+    const text = await askAI(game, question);
+    aiResponse.style.display = 'block';
+    aiResponse.querySelector('.response-content').innerHTML = markdownToHTML(text);
+  } catch (error) {
+    aiResponse.style.display = 'block';
+    aiResponse.querySelector('.response-content').innerHTML = `<span style="color: #ff7070;">${error.message || 'An error occurred while processing your request. Please try again later.'}</span>`;
+  } finally {
+    askButton.disabled = false;
+    askButton.textContent = 'Ask';
+    askButton.classList.remove('loading');
+    historyModal.classList.add('hidden');
+  }
+});
 const gameSelect = document.getElementById('gameSelect');
 const questionInput = document.getElementById('questionInput');
 const askButton = document.getElementById('askButton');
@@ -70,6 +147,7 @@ const askAI = async (game, question) => {
     }
 }
 
+
 const sendForm = async (event) => {
     event.preventDefault();
     const game = gameSelect.value;
@@ -88,6 +166,7 @@ const sendForm = async (event) => {
         const text = await askAI(game, question);
         aiResponse.style.display = 'block';
         aiResponse.querySelector('.response-content').innerHTML = markdownToHTML(text);
+        addToHistory(game, question); // Salva no histórico
     } catch (error) {
         aiResponse.style.display = 'block';
         aiResponse.querySelector('.response-content').innerHTML = `<span style="color: #ff7070;">${error.message || 'An error occurred while processing your request. Please try again later.'}</span>`;
