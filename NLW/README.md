@@ -1,126 +1,30 @@
-# HTML
-- HypertText
-    - Textos puros, livros, revistas, jornais;
-    - Links: acessar outros documentos;
-    - Imagens, vídeos, áudios;
-- Markup
-    - Marcação
-    - Tags: <a> Link </a>
-    - Atributos: <a href="https://rocketseat.com.br">
-    - Globais: id, class, ...
-- Language
-    - Linguagem
-    - Sintaxe: maneira de escrever
+﻿# Goat'S Game Helper
 
-# HTTP
-- HyperText
-- Transfer
-    - Transferência
-- Protocol
-    - Protocolo
-    - Conjunto de regras
-- Methods HTTP (verbos): Get, Post, Patch/Put, Delete
-- Headers (cabeçalhos): Instruções/Informações extras para cada chamada
+Welcome to **Goat'S Game Helper**!  
+This web app leverages the power of Gemini AI to answer your questions, provide strategies, tips, and optimal builds for three popular games:
 
-# URL
-- Uniform
-    - Uniforme
-- Resource
-    - Recurso
-- Locator
-    - Localizador
-Encontrar um recurso (html, css, js, pdf, jpg, mp4, mpr, ...)
-Endereço
+- **Valorant**
+- **Counter-Strike 2 (CS2)**
+- **League of Legends (LoL)**
 
-# IP
-- Internet
-  - Rede mundial de computadores
-- Protocol
-  - Conjunto de regras
-Endereço do computador
-rocketseat.com.br (domínio)
-123.32.1.23 (ip)
+## 🚀 Features
 
-# DNS
-- Domain
-  - Domínio
-- Name
-  - Nome
-- Server
-  - Servidor
+- **Ask Anything:** Get instant answers about strategies, meta builds, and gameplay tips.
+- **User-Friendly:** Simple interface for quick and easy interaction.
+- **Multi-Game Support:** Switch between Valorant, CS2, and LoL seamlessly.
 
-# CSS
+## 💡 How to Use
 
-- Cascading
-  - Cascata
-  - Regras das escritas
-  - Hierarquia
-  - Especificidade
-- Style
-  - Estilo
-- Sheet
-  - Folha
+1. Open the app in your browser.
+   - You can access it at [Goat'S Game Helper](https://ggh-lisboas-projects-62e0e5e4.vercel.app/).
+2. Select your game.
+3. Type your question (e.g., "Best agent for Bind in Valorant?" or "How to eco round in CS2?").
+5. Click "Ask me" and receive an AI-generated response.
 
-De um arquivo que terá na sua sintaxe, declarações, propriedades e valores.
-A partir disso, o HTML é impactado visualmente.
+## 🙌 Contributing
 
-- declaração
-- seletor
-- propriedade e valor
+Suggestions and feedback are welcome!  
+Star ⭐ this repo if you find it helpful.
+On the site, go to my networks in the 💡!
 
-# JS
-- Linguagem de programação
-- Browsers
-- Input -> Process -> Output
-- Variáveis
-- Function
-  - Agrupamento e reuso de código
-  - Sequencia lógica
-  - Saída
-- Gemini (IA): esperar uma resposta
-- Mexer no meu navegador
-- Estrutura de dados
-- Estrutura de decisão
-- Algoritmo: sequencia de passos lógica, de maneira ordenada, a fim de chegar a alguma conclusão (limitada)
-- Lógica (Pensamento computacional)
-  - Abstração
-  - Decomposição
-  - Algoritmo
-  - Reconhecimento de padrão
-- Tipos de dados
-  - Number (números)
-  - String (textos) (" ",  ' ',  ` `)
-  - Boolean: true | false
-  - Objects
-  - ...
-
-# DOM
-- Document
-- Object
-- Model
-
-# API
-- Application
-- Programming
-- Interface
-- JSON: JavaScript Object Notation
-
-# CDN
-- Content
-- Delivery
-- Network
-
-# LLM
-- Large
-- Language
-- Model
-- Gemini, OpenAI (chatGPT), Anthropic (Claude) ...
-
-# Agentes AI
-- Tools (ferramentas): permitem uso de código, ou apps, ou qualquer informação extra.
-- Melhor contexto
-
-# Engenharia de prompt
-- One shot: uma única pergunta sem muito contexto
-- Few shot: é apresentado exemplos do que se espera
-- Chain of Thought: Cadeia de pensamento para a IA responder gradativamente conforme a instrução.
+---
