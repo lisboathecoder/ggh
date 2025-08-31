@@ -104,7 +104,7 @@ const getPrompt = (game, question) => {
 };
 
 const askAI = async (game, question) => {
-    const apiKey = 'AIzaSyAx65bwhaOJJLRpaVuKt3cZCqpCwPmB92k';
+    const apiKey = 'AIzaSyBDZKvnAKonz0eqHqJa_c2TVBq0AMGwZUk';
     const model = "gemini-2.5-flash";
     const geminiURL = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
     const prompt = getPrompt(game, question);
